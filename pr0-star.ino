@@ -99,8 +99,8 @@ void cycle_mode() {
 		Serial.print("Mode changed to: ");
 		Serial.println(mode);
 #endif // DEBUG
-		if (mode > 5 && mode < 1) {
-			step = 0;
+		if (mode > 5 || mode < 1) { //Do not reset the current step when switching trough the different pulsating Colors
+			step = 0; 
 		}
 	}
 }
